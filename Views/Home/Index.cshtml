@@ -1,0 +1,13 @@
+﻿@model IEnumerable<CLDV7112_PracticumGuide.Models.SensorReading>
+<h2>Real-Time Sensor Dashboard</h2>
+<table border="1" style="width:60%; text-align:center;">
+    <tr><th>Device</th><th>Temperature</th><th>Time</th></tr>
+    @foreach (var r in Model)
+    {
+        <tr><td>@r.DeviceId</td><td>@r.Temperature</td><td>@r.RecordedAt</td></tr>
+    }
+</table>
+
+<script>
+    setTimeout(() => location.reload(), 3000); // refresh every 3s
+</script>
